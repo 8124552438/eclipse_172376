@@ -32,7 +32,7 @@ input.star:checked ~ label.star:before {
   color: #FD4;
   transition: all .25s;
 }
-
+                                                     
 input.star-5:checked ~ label.star:before {
   color: #FE7;
   text-shadow: 0 0 20px #952;
@@ -48,6 +48,7 @@ label.star:before {
 } 
 </style>
 <body>
+
 
 		<div class="row">
 
@@ -72,6 +73,8 @@ Ishaan Khatter</p>
 		</div>
 		</div>
 		<div>
+		
+ 
     <form action="">
     
 
@@ -97,11 +100,38 @@ Ishaan Khatter</p>
     
 </form>
 </div>
-<div class="form-group">
-  <label for="comment">Comment:</label></div>
-   <textarea class="form-control" rows="5"  cols="6" id="comment"></textarea>
+<form action="register.html">
+<label for="comment" class="required"><h3>Enter Your Comment Here</h3></label>
+  <input type="text"  data-toggle="modal" data-target="#myModal"></input>
+  
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+           <div class="form-group">
+  <p>Please Login First</p>
+    <label for="email" class="required">Email address:</label>
+    <input type="email" class="form-control"  placeholder="Enter your mail here" name="email"  class="required">
+    
+   <label for="pwd" class="required">Password:</label>
+    <input type="password" class="form-control"  placeholder="Enter your password here"  name="pwd"  class="required">
+    <input type ="submit" value="submit">
+        </div>
+      </div></div>
+ 
+ 
+ 
+ 
 </div>
 
+
+
+  
+
+</div>
+</form>
 
 </body>
 </html>
