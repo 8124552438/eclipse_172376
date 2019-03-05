@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	/**protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -44,16 +44,15 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		String email = request.getParameter("email");
 		String password = request.getParameter("pwd");
-		String mobile = request.getParameter("mobile");
-		String username = request.getParameter("username");
-		System.out.println(email+" "+password + mobile + username);
-		imdbdao res = new imdbdao();                                                                                                                                                                                            
-		try {
-			res.insert(email, password, mobile, username);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		response.sendRedirect("success.html");
+		System.out.println(email+" "+password);
+		imdbdao res = new imdbdao(); 
+		boolean status=false;
+		status=res.validate(email, password);
+		System.out.println(status);
+		if(status)
+			response.sendRedirect("login.html");
+		else
+			response.sendRedirect("register.html");
 	}            
 
 }

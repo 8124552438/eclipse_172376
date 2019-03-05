@@ -2,20 +2,98 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
 </head>
 <body>
-<h3>Provide all the fields for registration.</h3>
-<form action="registration" method="post">
 
-<strong>User name</strong>:<input type="text" name="username" required><br>
-<strong>Email ID</strong>:<input type="text" name="email" required><br>
-<strong>Password</strong>:<input type="password" name="password" required><br>
-<strong>Mobile</strong>:<input type="text" name="mobile" required><br>
+<h2>Login Form</h2>
 
-<input type="submit" value="Register">
+<form action="ValidateServlet" method="post">
+
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="email"><b>email</b></label>
+    <input type="text" placeholder="Enter email" name="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <label for="mobile"><b>mobile</b></label>
+    <input type="text" placeholder="Enter mobile" name="mobile" required>
+
+    <label for="username"><b>username</b></label>
+    <input type="text" placeholder="Enter username" name="username" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
 </form>
-<br>
-If you are registered user, please <a href="login.html">login</a>.
 </body>
 </html>
